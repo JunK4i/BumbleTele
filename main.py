@@ -51,9 +51,11 @@ from firebase_admin import db
 # 	bot.send_message(chat_id, "PLease Select:", reply_markup=markup)
 
 load_dotenv()
+print("running")
 service_account = json.loads(os.getenv("SERVICE_ACCOUNT"))
 bot_token = os.getenv("BOT_TOKEN")
-
+print(bot_token)
+# bot_token = BOT_TOKEN
 bot = telebot.TeleBot(bot_token)
 
 # firebase functions
