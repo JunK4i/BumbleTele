@@ -55,7 +55,6 @@ print("running")
 service_account = json.loads(os.getenv("SERVICE_ACCOUNT"))
 bot_token = os.getenv("BOT_TOKEN")
 print(bot_token)
-# bot_token = BOT_TOKEN
 bot = telebot.TeleBot(bot_token)
 
 # firebase functions
