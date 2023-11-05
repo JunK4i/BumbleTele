@@ -53,7 +53,7 @@ from firebase_admin import db
 load_dotenv()
 print("running")
 service_account = json.loads(os.getenv("SERVICE_ACCOUNT"))
-bot_token = os.getenv("BOT_TOKEN")
+# bot_token = os.getenv("BOT_TOKEN")
 print(bot_token)
 bot = telebot.TeleBot(bot_token)
 
