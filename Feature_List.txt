@@ -1,0 +1,13 @@
+1. Group Functionality
+    a. Join Group and manage questions
+    b. Privacy Features for group
+2. Payments
+3. Cloud Hosting
+    a. development vs production environment
+    b. version control with github
+4. Security, ensuring data 
+5. Features:
+    a. Requiring more people to answer before revealing
+    b. Adding username to the person who responded
+    c. Increase the number of cards and categories
+    d. Add a select random qn. 
