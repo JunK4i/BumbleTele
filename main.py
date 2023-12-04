@@ -53,7 +53,7 @@ from firebase_admin import db
 load_dotenv()
 print("running")
 service_account = json.loads(os.getenv("SERVICE_ACCOUNT"))
-# bot_token = os.getenv("BOT_TOKEN")
+bot_token = os.getenv("BOT_TOKEN")
 print(bot_token)
 bot = telebot.TeleBot(bot_token)
 
@@ -160,13 +160,6 @@ def gen_question_deck_menu():
 
 
 def gen_questions(idx, deck):
-    # markup = InlineKeyboardMarkup()
-    # markup.row_width = 3
-    # markup.add(InlineKeyboardButton("Left", callback_data=f"cb_questions_{idx-1}_{deck}"))
-    # markup.add(InlineKeyboardButton("Right", callback_data=f"cb_questions_{idx+1}_{deck}"))
-    # markup.add(InlineKeyboardButton("Select", callback_data=f"cb_question_{idx}_{deck}"))
-    # markup.add(InlineKeyboardButton("Back", callback_data="cb_question_deck"))
-
     markup = quick_markup(
         {
             "<": {"callback_data": f"cb_questions_{idx-1}_{deck}"},
@@ -304,9 +297,6 @@ def handle_message(message):
             message.chat.id,
             f"Please state the number of required answers to unlock your answer!",
         )
-        # bot.send_message(message.chat.id, "IMPORTANT!!\n\nAfter chat selection, DO NOT send message directly. Wait for a popup to load and click the popup!")
-        # bot.send_message(message.chat.id, f"Question: {question}\n\nAnswer: {answer}\n\nPlease select a chat to send the question to!\n\n",
-        # reply_markup=send_private_chat(f"{question}_{answer}"))
         bot.set_state(message.from_user.id, f"lock_requirement|{question}|{answer}")
     elif status == "custom_question":
         bot.send_message(
